@@ -1,0 +1,104 @@
+﻿html, body {
+    background-color: #e9eef1;
+}
+
+h1, h2, h3, p {
+    margin: 10px;
+    padding: 0;
+}
+
+img {
+    border: none;
+}
+
+p {
+    text-align: justify;
+}
+
+section {
+    background-color: #fdfdfd;
+    width: 60%;
+    margin: 20px auto;
+    min-height: 500px;
+}
+
+header > div > a {
+    text-align: left;
+    font-size: 50px;
+    text-decoration: none;
+    padding: 14px 16px;
+    color: #737a85;
+    font-family: 'Ink Free';
+    font-stretch: ultra-condensed;
+}
+
+aside {
+    float: left;
+    margin: 20px;
+    width: 28%;
+}
+
+article {
+    float: left;
+    margin: 20px;
+    width: 58%;
+    background-color: #e2e2e2;
+    min-height: 460px;
+}
+
+footer {
+    background-color: #333945;
+    bottom: 0 auto;
+    position: fixed;
+    width: 100%;
+    clear: both;
+    color: #afb6b9;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+header {
+    background-color: #ced1dc;
+}
+
+nav {
+    background-color: #333945;
+}
+
+    nav > div > ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+        nav > div > ul > li {
+            float: left;
+        }
+
+            nav > div > ul > li > a {
+                display: block;
+                color: #afb6b9;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                nav > div > ul > li > a:hover {
+                    background: #ddd;
+                    color: black;
+                }
+
+.right {
+    float: right;
+}
+
+.width80Center {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#carouselExampleControls {
+    width: 60%
+}

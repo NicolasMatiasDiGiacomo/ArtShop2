@@ -1,0 +1,16 @@
+﻿@model IEnumerable<ArtShop.Data.Model.Artist>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Shop</h2>
+
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.FirstName  @item.LastName</li>
+        }
+    </ul>
+</div>
+
