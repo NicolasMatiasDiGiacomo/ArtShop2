@@ -8,7 +8,7 @@ h1, h2, h3, p {
 }
 
 img {
-    border: none;
+    width: 100%;
 }
 
 p {
@@ -20,6 +20,8 @@ section {
     width: 60%;
     margin: 20px auto;
     min-height: 500px;
+    display: block;
+    overflow: auto;
 }
 
 header > div > a {
@@ -34,16 +36,16 @@ header > div > a {
 
 aside {
     float: left;
-    margin: 20px;
-    width: 28%;
+    margin: 10px;
+    width: 32%;
 }
 
 article {
     float: left;
-    margin: 20px;
-    width: 58%;
+    margin: 10px;
+    width: 62%;
     background-color: #e2e2e2;
-    min-height: 460px;
+    min-height: 480px;
 }
 
 footer {
@@ -97,6 +99,21 @@ nav {
 .width80Center {
     width: 80%;
     margin: 0 auto;
+}
+
+.container {
+    position: relative;
+    float: left;
+    margin: 1.6%;
+    width: 30%;
+}
+
+.shopImage {
+    position: absolute;
+    bottom: 4px;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
 }
 
 #carouselExampleControls {
