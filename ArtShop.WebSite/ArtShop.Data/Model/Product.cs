@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArtShop.Data.Model
 {
-    public class Product
+    public class Product:IdentityBase
     {
 
         public string Title { get; set; }
