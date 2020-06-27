@@ -10,11 +10,14 @@ namespace ArtShop.Data.Model
     public class Product : IdentityBase
     {
         [Required]
+        [MaxLength(100)]
         public string Title { get; set; }
+        [MaxLength(250)]
         public string Description { get; set; }
         [Required]
         public int ArtistId { get; set; }
         [Required]
+        [MaxLength(30)]
         public string Image { get; set; }
         [Required]
         public double Price { get; set; }
