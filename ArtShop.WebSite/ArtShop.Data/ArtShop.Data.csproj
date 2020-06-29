@@ -68,6 +68,8 @@
     <Compile Include="Services\IArtistData.cs" />
     <Compile Include="Services\IDataService.cs" />
     <Compile Include="Services\InMemoryArtistData.cs" />
+    <Compile Include="Services\InMemoryProductData.cs" />
+    <Compile Include="Services\IProductData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
