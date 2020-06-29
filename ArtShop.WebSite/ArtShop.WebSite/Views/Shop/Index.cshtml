@@ -1,19 +1,22 @@
-﻿@model IEnumerable<ArtShop.Data.Model.Artist>
+﻿@model IEnumerable<ArtShop.Data.Model.Product>
+
+
 @{
     ViewBag.Title = "Index";
 }
 
-<aside>
-    @foreach (var item in Model)
-    {
-        <p>@item.FirstName  @item.LastName</p>
-    }
-</aside>
+    <aside>
+        @foreach (var item in Model)
+        {
+            <p>@item.Title</p>
+            @Html.ActionLink("Seleccionar", "../Product/SelectProduct", new { id = item.Id })
+        }
+    </aside>
 <article>
     <div class="container">
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" alt="HTML5 Icon">
         <div class="shopImage">Left</div>
-        @Html.ActionLink("Product", "SelectProduct", "Product")
+       
     </div>
     <div class="container">
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" alt="HTML5 Icon">

@@ -1,5 +1,5 @@
-﻿using ArtShop.Data.Services;
-using ArtShop.Data.Model;
+﻿using ArtShop.Data.Model;
+using ArtShop.Data.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +10,16 @@ namespace ArtShop.WebSite.Controllers
 {
     public class ShopController : Controller
     {
-        BaseDataService<Artist> db;
+        private BaseDataService<Product> db;
+        // GET: Product
+
 
         public ShopController()
         {
-            db = new BaseDataService<Artist>();
+            db = new BaseDataService<Product>();
         }
 
+       
         public ActionResult Index()
         {
             var list = db.Get();
