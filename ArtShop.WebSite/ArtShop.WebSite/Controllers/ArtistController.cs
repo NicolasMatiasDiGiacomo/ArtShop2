@@ -87,5 +87,41 @@ namespace ArtShop.WebSite.Controllers
                 return View(artist);
             }
         }
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var artist = db.GetById(id.Value);
+            if (artist == null)
+            {
+                return HttpNotFound();
+            }
+            return View(artist);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Artist artist)
+        {
+            this.CheckAuditPattern(artist);
+            var list = db.ValidateModel(artist);
+            if (ModelIsInvalid(list))
+            {
+                return View(artist);
+            }
+            try
+            {
+                db.Delete(artist.Id);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.MessageDanger = ex.Message;
+                return View(artist);
+            }
+        }
     }
 }

@@ -16,8 +16,8 @@ namespace ArtShop.Data.Model
         {
             this.Products = new HashSet<Product>();
         }
-        [Required]
-        [MaxLength(30)]
+        [Required(ErrorMessage = "El nombre es requerido")]
+        [MaxLength(30, ErrorMessage = "El nombre no puede ser mayor a 30 caracteres")]
         [DisplayName("Nombre")]
         public string FirstName { get; set; }
         [Required]
