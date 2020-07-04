@@ -1,5 +1,6 @@
 ﻿using ArtShop.Data.Model;
 using ArtShop.Data.Services;
+using ArtShop.WebSite.Services;
 using OdeToFood.WebSite.Controllers;
 using System;
 using System.Collections.Generic;
@@ -42,11 +43,13 @@ namespace ArtShop.WebSite.Controllers
             }
             try
             {
-                db.Create(artist);
+                //db.Create(artist);
+                db.Create(new Artist());
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
+                Logger.Instance.LogException(ex);
                 ViewBag.MessageDanger = ex.Message;
                 return View(artist);
             }
@@ -83,6 +86,7 @@ namespace ArtShop.WebSite.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Instance.LogException(ex);
                 ViewBag.MessageDanger = ex.Message;
                 return View(artist);
             }
@@ -119,6 +123,7 @@ namespace ArtShop.WebSite.Controllers
             }
             catch (Exception ex)
             {
+                Logger.Instance.LogException(ex);
                 ViewBag.MessageDanger = ex.Message;
                 return View(artist);
             }

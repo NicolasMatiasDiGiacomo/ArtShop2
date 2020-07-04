@@ -19,6 +19,7 @@ namespace ArtShop.Data.Model
             this.ChangedBy = "monitor@artshop.com";
         }
 
+        [MaxLength]
         public string UserId { get; set; }
         public Nullable<System.DateTime> ErrorDate { get; set; }
         [MaxLength(40)]
