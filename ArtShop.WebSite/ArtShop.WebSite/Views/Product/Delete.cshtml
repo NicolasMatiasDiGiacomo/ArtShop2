@@ -1,0 +1,59 @@
+﻿@model ArtShop.Data.Model.Product
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="post">
+    <h2 class="title"> Eliminar producto?</h2>
+    <p class="byline">
+        <h4>Producto: @Model.Title</h4>
+
+    </p>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <div class="form-horizontal">
+
+                <hr />
+
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ArtistId)
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Image)
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Price)
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.QuantitySold)
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AvgStars)
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description)
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <input type="submit" value="Eliminar" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
