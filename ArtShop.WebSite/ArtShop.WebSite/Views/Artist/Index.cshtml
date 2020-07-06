@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ArtShop.Data.Model.Artist>
+@{
+    ViewBag.Title = "Index";
+}
+
+<aside>
+    @Html.ActionLink("Nuevo Artista", "Create", "Artist")
+</aside>
+<article>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LifeSpan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalProducts)
+            </th>
+            <th>
+                Operaciones
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.LifeSpan)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.TotalProducts)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+</article>
+
