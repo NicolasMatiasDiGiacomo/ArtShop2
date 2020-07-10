@@ -6,7 +6,7 @@ using System.Threading;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 
-namespace OdeToFood.WebSite.Controllers
+namespace ArtShop.WebSite.Controllers
 {
     public class BaseController : Controller
     {

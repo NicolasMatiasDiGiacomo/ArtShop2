@@ -249,9 +249,11 @@
     <Content Include="Views\Product\ToList.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Products\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
