@@ -4,42 +4,39 @@
 @{
     ViewBag.Title = "SelectProduct";
 }
-<link href="~/Content/Site.css" rel="stylesheet" />
 
-<img class="product" src="~/Image/producto1.jpg">
+<aside>
+    <img class="product" src="~/Content/Products/@Model.Image">
+</aside>
+<article>
+    <div>
+        <h3>@Model.Title</h3>
+        <h4>@Model.Description</h4>
 
+        <p>
+            <div class="ec-stars-wrapper">
+                <a href="#" data-value="1" title="1 estrella">&#9733;</a>
+                <a href="#" data-value="2" title="2 estrellas">&#9733;</a>
+                <a href="#" data-value="3" title="3 estrellas">&#9733;</a>
+                <a href="#" data-value="4" title="4 estrellas">&#9733;</a>
+                <a href="#" data-value="5" title="5 estrellas">&#9733;</a>
+            </div>
+        </p>
 
-
-
-<div>
-
-    <h3>@Model.Title</h3>
-    <h4>@Model.CreatedBy</h4>
-
-    <p>
-        <div class="ec-stars-wrapper">
-            <a href="#" data-value="1" title="1 estrella">&#9733;</a>
-            <a href="#" data-value="2" title="2 estrellas">&#9733;</a>
-            <a href="#" data-value="3" title="3 estrellas">&#9733;</a>
-            <a href="#" data-value="4" title="4 estrellas">&#9733;</a>
-            <a href="#" data-value="5" title="5 estrellas">&#9733;</a>
-
-        </div>
-    </p>
-
-    <p>
-
-        <h4>$@Model.Price</h4>
-        <input type="button" value="Agregar al carrito" id="addcart" onclick="location.href = '../../Cart/Create/@Model.Id';" />
-        <select id="quantity">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-
-    </p>
-    <p>@Model.Description </p>
-
-
-</div>
+        <p>
+            $@Model.Price
+            <input type="button" value="Agregar al carrito" id="addcart" onclick="location.href = '../../Cart/Create/@Model.Id';" />
+            <select id="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </p>
+        <p>
+            Por <strong>@Model.Artist.FullName</strong>. @Model.Artist.LifeSpan
+        </p>
+        <p>@Model.Artist.Country</p>
+        <p>@Model.Artist.Description</p>
+    </div>
+</article>
