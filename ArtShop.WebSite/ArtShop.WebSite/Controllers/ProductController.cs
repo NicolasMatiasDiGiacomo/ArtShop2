@@ -13,7 +13,7 @@ using System.IO;
 
 namespace ArtShop.WebSite.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class ProductController : BaseController
     {
         private BaseDataService<Product> MyContext;

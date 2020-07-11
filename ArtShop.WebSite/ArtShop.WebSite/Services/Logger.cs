@@ -39,7 +39,7 @@ namespace ArtShop.WebSite.Services
                 var db = new BaseDataService<Error>();
                 db.Create(error);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 /* no hacer nada, o enviar un correo electrónico al webmaster */
             }
