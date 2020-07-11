@@ -43,8 +43,7 @@ namespace ArtShop.WebSite.Controllers
             }
             try
             {
-                //db.Create(artist);
-                db.Create(new Artist());
+                db.Create(artist);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)

@@ -6,6 +6,30 @@
 }
 
 <aside>
+    <div>
+        Ordenar
+        @Html.DropDownList("OrderById", new List<SelectListItem>
+        { new SelectListItem{Text="Popularida", Value="1"},
+            new SelectListItem{Text="Precio", Value="2"},
+            new SelectListItem{Text="Rating", Value="3"}})
+    </div>
+    <div>
+        Filtrar por artista
+        <br />
+        @foreach (var item in Model.GroupBy(a => a.Artist.Id).Select(g => g.First()).OrderBy(o => o.Artist.FullName))
+        {
+            @Html.CheckBox("ArtistId", new { value = item.Artist.Id, @checked = true });
+            @Html.DisplayFor(model => item.Artist.FullName)
+            <br />
+        }
+    </div>
+    <div>
+        Rango de precios
+        <div>
+            0 - @Model.Max(x => x.Price)
+            <input type="range" value="0" min="0" max="@Model.Max(x => x.Price)" style="width: 100%;" />
+        </div>
+    </div>
 </aside>
 <article>
     @foreach (var item in Model)
@@ -13,31 +37,10 @@
         <div class="container">
             <a href="../Product/SelectProduct/@item.Id">
                 <img src="~/Content/Products/@item.Image" alt="@item.Title">
-                <div class="shopImage">Left</div>
+                <div class="shopImage">@item.Title</div>
             </a>
         </div>
     }
-    <div class="container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" alt="HTML5 Icon">
-        <div class="shopImage">Left</div>
-
-    </div>
-    <div class="container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" alt="HTML5 Icon">
-        <div class="shopImage">Center</div>
-    </div>
-    <div class="container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" alt="HTML5 Icon">
-        <div class="shopImage">Right</div>
-    </div>
-    <div class="container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" alt="HTML5 Icon">
-        <div class="shopImage">Left</div>
-    </div>
-    <div class="container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png" alt="HTML5 Icon">
-        <div class="shopImage">Center</div>
-    </div>
 </article>
 
 
