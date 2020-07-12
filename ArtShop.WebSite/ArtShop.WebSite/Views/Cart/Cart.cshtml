@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<ArtShop.Data.Model.CartItem>
+@{
     ViewBag.Title = "Cart";
 }
 
@@ -7,47 +8,51 @@
 
     <a href="/Shop">Seguir Comprando</a>
     <br />
-    <br />
-    <br />
     <u>Total General:</u>
 
 </aside>
 
 <article>
-    <table>
-        <thead>
-            <!-- Se declara la cabecera-->
-            <tr>
-                <th></th>
-                <th>Obra de Arte</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Subtotal</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <img src="~/Content/Images/cuadro.jpg" />
-                </td>
-                <td>Cuadro de Prueba</td>
-                <td>600</td>
-                <td></td>
-                <td>
-                    <select>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cart.Cookie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                Borrar
+            </th>
+        </tr>
 
-                        <option value=""></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cart.Cookie)
                 </td>
-                <td>600</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
             </tr>
-        </tbody>
+        }
+
     </table>
 
 </article>
