@@ -16,5 +16,7 @@ namespace ArtShop.Data.Model
         public DateTime CartDate { get; set; }
         [Required]
         public int ItemCount { get; set; }
+
+        public virtual ICollection<CartItem> CartItems {get; set;}
     }
 }
