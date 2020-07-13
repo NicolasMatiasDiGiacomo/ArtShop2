@@ -4,7 +4,12 @@
 @{
     ViewBag.Title = "SelectProduct";
 }
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .checked {
+        color: orange;
+    }
+</style>
 <aside>
     <img class="product" src="~/Content/Products/@Model.Image">
 </aside>
@@ -14,13 +19,46 @@
         <h4>@Model.Description</h4>
 
         <p>
-            <div class="ec-stars-wrapper">
-                <a href="#" data-value="1" title="1 estrella">&#9733;</a>
-                <a href="#" data-value="2" title="2 estrellas">&#9733;</a>
-                <a href="#" data-value="3" title="3 estrellas">&#9733;</a>
-                <a href="#" data-value="4" title="4 estrellas">&#9733;</a>
-                <a href="#" data-value="5" title="5 estrellas">&#9733;</a>
-            </div>
+            @if (@Model.AvgStars == 1)
+            {
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            }
+            else if (@Model.AvgStars == 2)
+            {
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            }
+            else if (@Model.AvgStars == 3)
+            {
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            }
+            else if (@Model.AvgStars == 4)
+            {
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+            }
+            else if (@Model.AvgStars == 5)
+            {
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            }
         </p>
 
         <p>
