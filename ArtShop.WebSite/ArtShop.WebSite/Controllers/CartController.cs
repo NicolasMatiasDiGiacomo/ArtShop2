@@ -94,5 +94,45 @@ namespace ArtShop.WebSite.Controllers
 
             return RedirectToAction("Cart", "Cart");
         }
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            var product = db.GetById(id.Value);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
+
+        /*[HttpPost, ActionName("Delete")] 
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            var product = db.GetById(id.Value);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            db.Delete(product);
+            db.SaveChanges();
+            return RedirectToAction("Index");*/
+        }
+       /* protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }*/
+
+
+
+
+
     }
-}
+
