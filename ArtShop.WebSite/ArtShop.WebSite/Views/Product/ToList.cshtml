@@ -19,7 +19,7 @@
                     @Html.DisplayNameFor(model => model.Title)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.ArtistId)
+                    @Html.DisplayNameFor(model => model.Artist.FullName)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Image)
@@ -48,7 +48,7 @@
                         @Html.DisplayFor(model => item.Title)
                     </td>
                     <td>
-                        @Html.DisplayFor(model => item.ArtistId)
+                        @Html.DisplayFor(model => item.Artist.FullName)
                     </td>
                     <td>
                         @Html.DisplayFor(model => item.Image)
