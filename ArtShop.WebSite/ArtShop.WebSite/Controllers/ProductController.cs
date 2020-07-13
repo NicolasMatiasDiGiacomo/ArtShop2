@@ -99,32 +99,40 @@ namespace ArtShop.WebSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var product = MyContext.GetById(id.Value);
+            var product = db.Product.Find(id);
             if (product == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.ArtistId = new SelectList(db.Artist, "Id", "FullName", product.ArtistId);
             return View(product);
         }
 
         [HttpPost]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(Product product, HttpPostedFileBase file)
         {
-            this.CheckAuditPattern(product);
-            var listModel = MyContext.ValidateModel(product);
-            if (ModelIsInvalid(listModel))
-                return View(product);
             try
             {
-                MyContext.Update(product);
-                return RedirectToAction("../Product/ToList");
+                if (file != null && file.ContentLength > 0)
+                {
+                    string filename = Path.GetFileName(file.FileName);
+                    string path = Path.Combine(Server.MapPath("/content/products"), filename);
+                    file.SaveAs(path);
+                    product.Image = filename;
+                }
+                this.CheckAuditPattern(product, false);
+                db.Entry(product).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
                 Logger.Instance.LogException(ex);
-                ViewBag.MessageDanger = ex.Message;
-                return View(product);
             }
+
+            ViewBag.ArtistId = new SelectList(db.Artist, "Id", "FullName", product.ArtistId);
+            ViewBag.MessageDanger = "¡Error al modificar el Producto con su imagén.";
+            return View(product);
         }
 
         [HttpGet]
