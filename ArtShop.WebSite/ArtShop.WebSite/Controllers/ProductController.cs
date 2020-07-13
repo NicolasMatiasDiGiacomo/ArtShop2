@@ -120,7 +120,7 @@ namespace ArtShop.WebSite.Controllers
                     file.SaveAs(path);
                     product.Image = filename;
                 }
-                this.CheckAuditPattern(product, false);
+                this.CheckAuditPattern(product);
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
