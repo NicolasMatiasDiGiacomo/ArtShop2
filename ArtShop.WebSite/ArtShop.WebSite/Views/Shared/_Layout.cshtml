@@ -23,11 +23,11 @@
             <ul>
                 <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                 <li>@Html.ActionLink("Shop", "Index", "Shop")</li>
-                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-                {
+                
+                
                     <li>@Html.ActionLink("Artistas", "Index", "Artist")</li>
                     <li>@Html.ActionLink("Productos", "Index", "Product")</li>
-                }
+                
                 <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                 <li class="right">@Html.ActionLink("Carrito", "Cart", "Cart")</li>
             </ul>
