@@ -10,20 +10,12 @@ namespace ArtShop.WebSite.Controllers
 {
     public class ShopController : Controller
     {
-        private BaseDataService<Product> db;
-        // GET: Product
+        private readonly BaseDataService<Product> db = new BaseDataService<Product>();
 
-
-        public ShopController()
-        {
-            db = new BaseDataService<Product>();
-        }
-
-       
         public ActionResult Index()
         {
-            var list = db.Get();
-            return View(list);
+            var products = db.Get(null, null, "Artist");
+            return View(products);
         }
     }
 }

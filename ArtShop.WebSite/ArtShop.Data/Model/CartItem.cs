@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 
 namespace ArtShop.Data.Model
 {
-    class CartItem : IdentityBase
+    public class CartItem : IdentityBase
     {
         [Required]
         public int CartId { get; set; }
         [Required]
         public int ProductId { get; set; }
         [Required]
-        public float Price { get; set; }
+        public double Price { get; set; }
         [Required]
         public int Quantity { get; set; }
+
+        public virtual Cart Cart { get; set; }
     }
 }

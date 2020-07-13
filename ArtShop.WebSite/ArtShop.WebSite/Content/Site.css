@@ -11,12 +11,12 @@ img {
     width: 100%;
 }
 
-img.product {
+    img.product {
         margin: 20px;
         float: left;
         width: 220px;
         height: 350px;
-}
+    }
 
 p {
     text-align: justify;
@@ -140,19 +140,18 @@ nav {
     display: inline-block;
 }
 
-.ec-stars-wrapper a {
+    .ec-stars-wrapper a {
         text-decoration: none;
         display: inline-block;
         font-size: 32px;
         font-size: 2rem;
         color: #888;
-}
+    }
 
-.ec-stars-wrapper:hover a {
+    .ec-stars-wrapper:hover a {
         color: rgb(39, 130, 228);
-}
+    }
 
-.ec-stars-wrapper > a:hover ~ a {
+    .ec-stars-wrapper > a:hover ~ a {
         color: #888;
-}
-
+    }

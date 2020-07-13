@@ -1,7 +1,7 @@
 ﻿using ArtShop.Data.Model;
 using ArtShop.Data.Services;
 using ArtShop.WebSite.Services;
-using OdeToFood.WebSite.Controllers;
+using ArtShop.WebSite.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,8 +43,7 @@ namespace ArtShop.WebSite.Controllers
             }
             try
             {
-                //db.Create(artist);
-                db.Create(new Artist());
+                db.Create(artist);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)

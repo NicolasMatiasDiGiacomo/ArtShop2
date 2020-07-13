@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace ArtShop.Data.Model
 {
-    class Cart : IdentityBase
+    public class Cart : IdentityBase
     {
+        public Cart()
+        {
+            this.CartItem = new HashSet<CartItem>();
+        }
         [Required]
         [MaxLength(40)]
         public string Cookie { get; set; }
@@ -16,5 +20,7 @@ namespace ArtShop.Data.Model
         public DateTime CartDate { get; set; }
         [Required]
         public int ItemCount { get; set; }
+
+        public virtual ICollection<CartItem> CartItem { get; set; }
     }
 }
