@@ -1,28 +1,30 @@
-﻿@model ArtShop.Data.Model.Product
+﻿@model ArtShop.Data.Model.CartItem
+
 @{
     ViewBag.Title = "Delete";
 }
 
 <h2>Delete</h2>
+
 <h3>Eliminar</h3>
 <div>
     <h4>CartItem</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Id)
+            @Html.DisplayNameFor(model => model.Cart.Cookie)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Title)
+            @Html.DisplayFor(model => model.Cart.Cookie)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayNameFor(model => model.ProductId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.DisplayFor(model => model.ProductId)
         </dd>
 
         <dt>
@@ -34,15 +36,12 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.QuantitySold)
+            @Html.DisplayNameFor(model => model.Quantity)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.QuantitySold)
+            @Html.DisplayFor(model => model.Quantity)
         </dd>
-
-
-
     </dl>
 
     @using (Html.BeginForm())
@@ -54,4 +53,3 @@
         </div>
     }
 </div>
-

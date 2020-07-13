@@ -101,38 +101,34 @@ namespace ArtShop.WebSite.Controllers
             {
                 return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
             }
-            var product = db.GetById(id.Value);
-            if (product == null)
+            var item = db.CartItem.Find(id);
+            if (item == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(item);
         }
 
-        /*[HttpPost, ActionName("Delete")] 
-        public ActionResult DeleteConfirmed(int? id)
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
         {
-            var product = db.GetById(id.Value);
-            if (product == null)
+            var item = db.CartItem.Find(id);
+            if (item == null)
             {
                 return HttpNotFound();
             }
-            db.Delete(product);
+            db.CartItem.Remove(item);
             db.SaveChanges();
-            return RedirectToAction("Index");*/
+            return RedirectToAction("Cart");
         }
-       /* protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }*/
-
-
-
-
-
+        /* protected override void Dispose(bool disposing)
+         {
+             if (disposing)
+             {
+                 db.Dispose();
+             }
+             base.Dispose(disposing);
+         }*/
     }
+}
 
